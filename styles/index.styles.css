@@ -790,3 +790,49 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 6px; }
     .hero-facade img { border-radius: 15px; }
     .hero-facade figcaption { font-size: 11px; }
 }
+/* Cena da chegada: um mesmo relógio mantém o portão e os dois viajantes sincronizados. */
+.arrival-scene { position: relative; overflow: hidden; border-radius: 19px; isolation: isolate; }
+.arrival-overlay { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+.arrival-gate { transform-origin: 0 100px; transform: scaleX(1); }
+.pilgrim { opacity: 0; }
+.street-address { font-style: normal; font-weight: 800; }
+@keyframes gate-cycle {
+    0%, 30%, 88%, 100% { transform: skewY(0deg) scaleX(1); }
+    42%, 76% { transform: skewY(-16deg) scaleX(.14); }
+}
+@keyframes first-arrival {
+    0% { opacity: 0; transform: translate(450px, 968px) scale(1); }
+    5% { opacity: 1; }
+    28%, 40% { opacity: 1; transform: translate(1000px, 891px) scale(1); }
+    56% { opacity: 1; transform: translate(992px, 786px) scale(.72); }
+    64% { opacity: 0; transform: translate(981px, 732px) scale(.52); }
+    100% { opacity: 0; transform: translate(981px, 732px) scale(.52); }
+}
+@keyframes second-arrival {
+    0% { opacity: 0; transform: translate(300px, 988px) scale(1); }
+    7% { opacity: 1; }
+    33%, 46% { opacity: 1; transform: translate(908px, 920px) scale(1); }
+    55% { opacity: 1; transform: translate(1001px, 883px) scale(.96); }
+    69% { opacity: 1; transform: translate(992px, 783px) scale(.7); }
+    77%, 100% { opacity: 0; transform: translate(981px, 732px) scale(.52); }
+}
+@keyframes step-cycle {
+    0%, 100% { transform: rotate(-13deg); }
+    50% { transform: rotate(13deg); }
+}
+@keyframes open-by-hand {
+    0%, 27%, 44%, 100% { transform: rotate(0deg); }
+    32%, 40% { transform: rotate(-38deg); }
+}
+@media (prefers-reduced-motion: no-preference) {
+    .arrival-gate { animation: gate-cycle 14s linear infinite; }
+    .pilgrim-one { animation: first-arrival 14s linear infinite; }
+    .pilgrim-two { animation: second-arrival 14s linear infinite; }
+    .walk-leg { transform-origin: 0 -63px; animation: step-cycle .65s ease-in-out infinite; }
+    .leg-back { animation-delay: -.325s; }
+    .pilgrim-arm { transform-origin: 13px -106px; animation: open-by-hand 14s linear infinite; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .pilgrim-one { opacity: 1; transform: translate(830px, 935px); }
+    .pilgrim-two { opacity: 1; transform: translate(713px, 956px); }
+}
