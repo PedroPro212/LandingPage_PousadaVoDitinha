@@ -1,0 +1,640 @@
+:root {
+    --cream: #fff8e8;
+    --ink: #30452f;
+    --green: #477a55;
+    --yellow: #ffcf64;
+    --orange: #ff8b55;
+    --pink: #f6aeb0;
+    --mint: #d7f0c9
+}
+
+* {
+    box-sizing: border-box
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: Nunito, sans-serif;
+    overflow-x: hidden
+}
+
+a {
+    text-decoration: none;
+    color: inherit
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Baloo 2', cursive;
+    line-height: 1.06
+}
+
+header {
+    position: relative;
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px clamp(22px, 6vw, 100px);
+    background: #fff9e9
+}
+
+header .brand {
+    font: 800 28px 'Baloo 2';
+    line-height: .8;
+    display: flex;
+    align-items: center;
+    gap: 12px
+}
+
+.brand small {
+    display: block;
+    font: 800 10px Nunito;
+    letter-spacing: 2px;
+    margin-top: 8px
+}
+
+.brand-mark {
+    background: var(--yellow);
+    border: 3px solid var(--ink);
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    font-size: 27px;
+    transform: rotate(-8deg)
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    font-weight: 900;
+    font-size: 14px
+}
+
+nav a:hover {
+    color: #e56d3f
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 99px;
+    padding: 14px 25px;
+    background: var(--orange);
+    border: 3px solid var(--ink);
+    box-shadow: 4px 5px 0 var(--ink);
+    font-weight: 900;
+    transition: .2s;
+    cursor: pointer
+}
+
+.pill:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 3px 0 var(--ink)
+}
+
+.pill.yellow {
+    background: var(--yellow)
+}
+
+.hero {
+    min-height: 670px;
+    position: relative;
+    background: #e7f3ce;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 49% 51%;
+    align-items: center;
+    padding: 45px clamp(22px, 6vw, 100px) 90px
+}
+
+.hero:before {
+    content: '';
+    position: absolute;
+    width: 370px;
+    height: 370px;
+    border-radius: 50%;
+    background: #fff9d5;
+    right: 22%;
+    top: -240px
+}
+
+.hero-copy {
+    position: relative;
+    z-index: 2;
+    max-width: 650px
+}
+
+.eyebrow {
+    display: inline-block;
+    background: #fffaf0;
+    border: 2px solid var(--ink);
+    border-radius: 50px;
+    padding: 9px 18px;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+    transform: rotate(-2deg);
+    margin-bottom: 22px
+}
+
+.hero h1 {
+    font-size: clamp(60px, 7vw, 112px);
+    letter-spacing: -3px;
+    margin-bottom: 16px
+}
+
+.hero h1 span {
+    color: #e87848;
+    display: block
+}
+
+.hero p {
+    font-size: clamp(17px, 1.7vw, 21px);
+    font-weight: 800;
+    line-height: 1.55;
+    max-width: 530px
+}
+
+.hero .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 28px
+}
+
+.secondary {
+    background: #fffdf3
+}
+
+.hero-art {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 15px 0 rgba(42, 73, 43, .07))
+}
+
+.wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 100px
+}
+
+.floating {
+    position: absolute;
+    z-index: 3;
+    background: #fff8e8;
+    border: 3px solid var(--ink);
+    border-radius: 18px;
+    padding: 12px 18px;
+    font-weight: 900;
+    box-shadow: 4px 5px 0 var(--ink);
+    transform: rotate(7deg);
+    right: 7%;
+    top: 22%
+}
+
+.section {
+    padding: 95px clamp(22px, 7vw, 110px)
+}
+
+.center {
+    text-align: center
+}
+
+.kicker {
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #d06d42;
+    font-size: 13px;
+    text-transform: uppercase
+}
+
+.section h2 {
+    font-size: clamp(40px, 5vw, 67px);
+    margin: 10px 0 17px
+}
+
+.lead {
+    font-size: 19px;
+    line-height: 1.65;
+    max-width: 760px;
+    margin: 0 auto 45px;
+    font-weight: 700
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto
+}
+
+.card {
+    border: 3px solid var(--ink);
+    border-radius: 30px;
+    background: #fff;
+    box-shadow: 7px 8px 0 var(--ink);
+    padding: 34px 26px;
+    text-align: left;
+    transition: .2s
+}
+
+.card:hover {
+    transform: translateY(-7px)
+}
+
+.card:nth-child(2) {
+    background: #fff0c4
+}
+
+.card:nth-child(3) {
+    background: #fce5e1
+}
+
+.card .emoji {
+    font-size: 55px;
+    display: block;
+    margin-bottom: 20px
+}
+
+.card h3 {
+    font-size: 30px;
+    margin: 0 0 12px
+}
+
+.card p {
+    font-weight: 700;
+    line-height: 1.6;
+    margin: 0
+}
+
+.journey {
+    background: #ffe9c4;
+    position: relative
+}
+
+.journey-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: auto
+}
+
+.journey p {
+    font-size: 19px;
+    line-height: 1.7;
+    font-weight: 700
+}
+
+.illustration-box {
+    border: 3px solid var(--ink);
+    border-radius: 35px;
+    background: #fff7de;
+    box-shadow: 9px 10px 0 var(--ink);
+    padding: 20px
+}
+
+.illustration-box svg {
+    width: 100%;
+    height: auto;
+    display: block
+}
+
+.gallery {
+    background: #fff8e8
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr 1fr;
+    gap: 22px;
+    max-width: 1200px;
+    margin: auto
+}
+
+.gallery-tile {
+    min-height: 240px;
+    border: 3px solid var(--ink);
+    border-radius: 28px;
+    box-shadow: 6px 7px 0 var(--ink);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    text-align: center;
+    gap: 12px
+}
+
+.gallery-tile span {
+    font-size: 72px
+}
+
+.gallery-tile b {
+    font: 800 25px 'Baloo 2'
+}
+
+.gallery-tile:nth-child(1) {
+    background: #dcecc9
+}
+
+.gallery-tile:nth-child(2) {
+    background: #ffe0b7
+}
+
+.gallery-tile:nth-child(3) {
+    background: #f8d7d3
+}
+
+.gallery-note {
+    font-size: 13px;
+    text-align: center;
+    margin: 25px auto 0;
+    font-weight: 700;
+    opacity: .75
+}
+
+.cta {
+    background: #477a55;
+    color: #fffaf0;
+    text-align: center;
+    padding: 90px 24px;
+    position: relative
+}
+
+.cta h2 {
+    font-size: clamp(42px, 6vw, 75px);
+    max-width: 800px;
+    margin: 0 auto 20px
+}
+
+.cta p {
+    font-size: 19px;
+    font-weight: 800;
+    margin-bottom: 30px
+}
+
+.cta .pill {
+    color: var(--ink)
+}
+
+.location {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    max-width: 1150px;
+    margin: auto
+}
+
+.map-card {
+    background: #e5efd1;
+    border: 3px solid var(--ink);
+    border-radius: 28px;
+    box-shadow: 7px 8px 0 var(--ink);
+    min-height: 300px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden
+}
+
+.map-card:before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 80px;
+    border: 7px dashed #f9f3d8;
+    border-left: 0;
+    border-right: 0;
+    transform: rotate(-28deg);
+    background: #c5dcae
+}
+
+.map-card .pin {
+    z-index: 1;
+    font-size: 75px;
+    filter: drop-shadow(3px 5px 0 #30452f)
+}
+
+.map-card strong {
+    z-index: 1;
+    position: absolute;
+    bottom: 32px;
+    background: #fff8e8;
+    border: 2px solid var(--ink);
+    border-radius: 20px;
+    padding: 10px 20px
+}
+
+.location p {
+    font-size: 19px;
+    line-height: 1.6;
+    font-weight: 700
+}
+
+footer {
+    background: #2f4735;
+    color: #fff8e8;
+    text-align: center;
+    padding: 35px 20px;
+    font-weight: 800
+}
+
+footer small {
+    display: block;
+    margin-top: 8px;
+    opacity: .75
+}
+
+#menuBtn {
+    display: none
+}
+
+@media(max-width:900px) {
+    nav {
+        gap: 12px
+    }
+
+    nav .nav-link {
+        display: none
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding-top: 65px
+    }
+
+    .hero h1 {
+        font-size: clamp(56px, 12vw, 88px)
+    }
+
+    .hero-art {
+        max-width: 650px;
+        margin: auto
+    }
+
+    .floating {
+        top: 53%;
+        right: 4%
+    }
+
+    .cards,
+    .gallery-grid {
+        grid-template-columns: 1fr
+    }
+
+    .journey-grid,
+    .location {
+        grid-template-columns: 1fr
+    }
+
+    .section {
+        padding: 70px 24px
+    }
+
+    .journey-grid {
+        gap: 35px
+    }
+}
+
+@media(max-width:480px) {
+    header {
+        padding: 16px
+    }
+
+    header .brand {
+        font-size: 22px
+    }
+
+    .brand-mark {
+        width: 42px;
+        height: 42px;
+        font-size: 22px
+    }
+
+    nav .pill {
+        font-size: 12px;
+        padding: 10px 12px
+    }
+
+    .hero {
+        padding: 45px 22px 70px;
+        min-height: auto
+    }
+
+    .hero h1 {
+        letter-spacing: -1px
+    }
+
+    .hero p {
+        font-size: 17px
+    }
+
+    .hero .pill {
+        width: 100%
+    }
+
+    .floating {
+        font-size: 11px;
+        top: 55%;
+        right: 0
+    }
+
+    .section h2 {
+        font-size: 42px
+    }
+}
+
+/* Identidade oficial Vó Ditinha — versão cartoon artesanal */
+:root {
+    --cream: #f7ecdc;
+    --ink: #3b2a1b;
+    --green: #5c6634;
+    --yellow: #f0c77c;
+    --orange: #c77848;
+    --pink: #e9ad89;
+    --mint: #e5e9c9
+}
+
+body {
+    background: #f7ecdc
+}
+
+header {
+    background: #fffaf1;
+    border-bottom: 1px solid #eadcc7
+}
+
+header .brand {
+    line-height: 1
+}
+
+.logo-header {
+    width: 88px;
+    height: 88px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #f0dfc5;
+    box-shadow: 0 3px 14px #51351b1c
+}
+
+.hero {
+    background: #e9e7c8
+}
+
+.hero:before {
+    background: #f7e5cc
+}
+
+.hero h1 span {
+    color: #b96339
+}
+
+.eyebrow {
+    background: #fff7e9
+}
+
+.logo-hero-wrap {
+    display: none
+}
+
+.pill {
+    color: #2d241a
+}
+
+.hero-art {
+    filter: saturate(.82)
+}
+
+@media(max-width:700px) {
+    .logo-header {
+        width: 68px;
+        height: 68px
+    }
+}
